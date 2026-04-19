@@ -1,0 +1,26 @@
+name: Create Release with All HTML
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Prepare files for release
+        run: cp index.html songs.html
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "*.html"
+          body: ${{ github.event.head_commit.message }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
