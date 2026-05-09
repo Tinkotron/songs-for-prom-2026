@@ -1,82 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Песни для выпускного 2026</title>
 
     <style>
         html {
-            scroll-behavior: auto;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: white;
-            color: black;
-            margin: 0;
-            padding: 20px;
+            font-size: xxx-large;
+            margin-bottom: auto;
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        @media screen {
+            html {
+                font-size: large;
+            }
         }
 
         nav {
-            margin-bottom: 30px;
-            max-width: 600px;
-            width: 100%;
+            margin-bottom: 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        nav h3 {
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .menu-list {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            text-align: left;
             align-items: flex-start;
         }
 
-        nav a {
-            color: blue;
-            text-decoration: underline;
-            font-size: 1.1rem;
-        }
-
         .song {
-            margin-bottom: 50px;
-            width: 100%;
-            max-width: 700px;
             border-top: 2px solid black;
-            padding-top: 10px;
         }
 
         pre {
             white-space: pre-wrap;
             font-family: inherit;
-            font-size: 1.3rem;
             line-height: 1.6;
-            background: none;
-            padding: 0;
-            color: #1a1a1a;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
 
 <nav id="navigation">
-    <h3>Список песен</h3>
+    <h3>СПИСОК ПЕСЕН</h3>
     <div class="menu-list" id="menu-container"></div>
 </nav>
 
@@ -477,7 +451,7 @@ Words don't come easy`
 
         link.addEventListener('click', function (e) {
             e.preventDefault();
-            document.getElementById(songId).scrollIntoView({behavior: 'smooth'});
+            document.getElementById(songId).scrollIntoView();
         });
 
         menuContainer.appendChild(link);
